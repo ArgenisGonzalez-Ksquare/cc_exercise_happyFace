@@ -20,11 +20,18 @@ In case of an empty array return 0. You will not be tested with invalid input (i
 //return the total number of smiling faces in the array
 
 const countSmileys = (arr) => {
-    /* Only make changes below this comment */
+  /* Only make changes below this comment */
+  const validSmileyPattern = /(:|;)(-|~)?(\)|D)/;
+  let count = 0;
 
-    return 0;
-    /* Only make changes below this comment */
-}
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].match(validSmileyPattern)) {
+      count++;
+    }
+  }
+  return count;
+  /* Only make changes below this comment */
+};
 
 /** DO NOT CHANGE THE LINE BELOW **/
 module.exports = countSmileys;
